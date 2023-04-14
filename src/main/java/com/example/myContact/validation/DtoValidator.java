@@ -1,6 +1,6 @@
 package com.example.myContact.validation;
 
-import com.example.myContact.dto.GroupCreatingDto;
+import com.example.myContact.dto.groupDto.GroupCreatingDto;
 import com.example.myContact.exceptions.RequestValidationException;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;

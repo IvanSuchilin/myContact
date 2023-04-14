@@ -1,4 +1,4 @@
-package com.example.myContact.dto;
+package com.example.myContact.dto.groupDto;
 
 import com.example.myContact.model.Contact;
 import com.example.myContact.model.Group;

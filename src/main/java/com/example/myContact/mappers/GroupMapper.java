@@ -1,8 +1,8 @@
 package com.example.myContact.mappers;
 
-import com.example.myContact.dto.GroupCreatingDto;
-import com.example.myContact.dto.GroupDto;
-import com.example.myContact.dto.GroupDtoUpd;
+import com.example.myContact.dto.groupDto.GroupCreatingDto;
+import com.example.myContact.dto.groupDto.GroupDto;
+import com.example.myContact.dto.groupDto.GroupDtoUpd;
 import com.example.myContact.model.Group;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
@@ -11,7 +11,7 @@ import org.mapstruct.NullValuePropertyMappingStrategy;
 import org.mapstruct.factory.Mappers;
 
 @Mapper(componentModel = "spring",
-        //uses = UserMapper.class,
+        uses = ContactMapper.class,
         nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE)
 public interface GroupMapper {
     GroupMapper INSTANCE = Mappers.getMapper(GroupMapper.class);

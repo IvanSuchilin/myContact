@@ -1,7 +1,7 @@
 package com.example.myContact.service;
 
-import com.example.myContact.dto.GroupCreatingDto;
-import com.example.myContact.dto.GroupDtoUpd;
+import com.example.myContact.dto.groupDto.GroupCreatingDto;
+import com.example.myContact.dto.groupDto.GroupDtoUpd;
 import com.example.myContact.exceptions.NotFoundException;
 import com.example.myContact.mappers.GroupMapper;
 import com.example.myContact.model.Group;
@@ -11,10 +11,8 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
-import javax.servlet.http.HttpServletRequest;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.stream.Collectors;
