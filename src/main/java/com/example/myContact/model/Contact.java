@@ -22,7 +22,7 @@ public class Contact {
     private Long id;
     @Column(name = "contact_name", nullable = false)
     private String name;
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "group_id")
     private Group group;
     @Column(name = "contact_company", nullable = false)

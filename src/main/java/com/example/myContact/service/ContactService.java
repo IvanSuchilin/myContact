@@ -2,7 +2,7 @@ package com.example.myContact.service;
 
 import com.example.myContact.dto.contactDto.ContactCreatingDto;
 import com.example.myContact.exceptions.NotFoundException;
-import com.example.myContact.mappers.ContactMapper;
+import com.example.myContact.mappers.GroupMapper;
 import com.example.myContact.model.Contact;
 import com.example.myContact.model.Group;
 import com.example.myContact.repository.ContactRepository;
@@ -26,8 +26,8 @@ public class ContactService {
         Group stored = groupRepository.findById(groupId).orElseThrow(() ->
                 new NotFoundException("Группа с id" + groupId + "  найдена", "Запрашиваемый объект не найден или не доступен",
                         LocalDateTime.now()));
-        Contact contact = ContactMapper.INSTANCE.toContact(newContact);
+        Contact contact = GroupMapper.INSTANCE.toContact(newContact);
         contact.setGroup(stored);
-        return ContactMapper.INSTANCE.toContactDto(contactRepository.save(contact));
+        return GroupMapper.INSTANCE.toContactDto(contactRepository.save(contact));
     }
 }
