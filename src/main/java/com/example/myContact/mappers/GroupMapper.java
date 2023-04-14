@@ -2,6 +2,7 @@ package com.example.myContact.mappers;
 
 import com.example.myContact.dto.contactDto.ContactCreatingDto;
 import com.example.myContact.dto.contactDto.ContactDto;
+import com.example.myContact.dto.contactDto.ContactDtoUpd;
 import com.example.myContact.dto.groupDto.GroupCreatingDto;
 import com.example.myContact.dto.groupDto.GroupDto;
 import com.example.myContact.dto.groupDto.GroupDtoUpd;
@@ -29,4 +30,8 @@ public interface GroupMapper {
 
     @Mapping(target = "group", source = "group.id")
     ContactDto toContactDto(Contact contact);
+    @Mapping(target = "id", ignore = true)
+    @Mapping(target = "religion", ignore = true)
+    @Mapping(target = "group.id", ignore = true)
+    void updateContact(ContactDtoUpd contactDtoUpd,@MappingTarget Contact stored);
 }

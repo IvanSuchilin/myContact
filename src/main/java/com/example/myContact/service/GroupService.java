@@ -34,9 +34,9 @@ public class GroupService {
     }
 
     public void deleteGroup(Long groupId) {
-        log.info("Получен запрос на удаление группы {}", groupId);
+        log.info("Удаление группы {}", groupId);
         groupRepository.findById(groupId).orElseThrow(() ->
-                new NotFoundException("Группа с id" + groupId + "  найдена", "Запрашиваемый объект не найден или не доступен",
+                new NotFoundException("Группа с id" + groupId + "не найдена", "Запрашиваемый объект не найден или не доступен",
                         LocalDateTime.now()));
         groupRepository.deleteById(groupId);
     }
@@ -44,13 +44,13 @@ public class GroupService {
     public Object getGroupById(Long id) {
         log.info("Получение информации о группе id={}", id);
         Group stored = groupRepository.findById(id).orElseThrow(() ->
-                new NotFoundException("Группа с id" + id + "  найдена", "Запрашиваемый объект не найден или не доступен",
+                new NotFoundException("Группа с id" + id + "не найдена", "Запрашиваемый объект не найден или не доступен",
                         LocalDateTime.now()));
         return GroupMapper.INSTANCE.toGroupDto(stored);
     }
 
     public Object getGroups(Integer from, Integer size) {
-        log.info("Получение информации о всех группах с размеромстраницы {}", size);
+        log.info("Получение информации о всех группах");
         Pageable pageable = PageRequest.of(from / size, size);
         return groupRepository.findAll(pageable).getContent()
                 .stream()
@@ -61,8 +61,9 @@ public class GroupService {
     public Object update(Long groupId, GroupDtoUpd groupDtoUpd) {
         log.info("Обновление информации о группе id={}", groupId);
         Group stored = groupRepository.findById(groupId).orElseThrow(() ->
-                new NotFoundException("Группа с id" + groupId + "  найдена", "Запрашиваемый объект не найден или не доступен",
+                new NotFoundException("Группа с id" + groupId + "не найдена", "Запрашиваемый объект не найден или не доступен",
                         LocalDateTime.now()));
+        validator.validateGroupUpdDto(groupDtoUpd);
         GroupMapper.INSTANCE.updateGroup(groupDtoUpd, stored);
         return GroupMapper.INSTANCE.toGroupDto(groupRepository.save(stored));
     }

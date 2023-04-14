@@ -20,7 +20,7 @@ import javax.validation.constraints.PositiveOrZero;
 @RequiredArgsConstructor
 @Validated
 @RequestMapping
-public class GroupCommentController {
+public class GroupController {
     private final GroupService groupService;
     private final ContactService contactService;
 
