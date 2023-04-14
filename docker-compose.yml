@@ -1,0 +1,29 @@
+version: '3.1'
+services:
+  server:
+    build: ./
+    image: server
+    container_name: myContacts-cont
+    ports:
+      - "8080:8080"
+    depends_on:
+      - myContacts-db
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://localhost:5432/contacts
+      - SPRING_DATASOURCE_USER=postgres
+      - SPRING_DATASOURCE_PASSWORD=091141
+      - DB_NAME=statsDb
+      - DB_HOST=myContacts-db
+        DB_PORT=5432
+
+  myContacts-db:
+    image: postgres:14-alpine
+    container_name: statsDb
+    ports:
+      - "6541:5432"
+    environment:
+      - POSTGRES_DB=contacts
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=091141
+
+
