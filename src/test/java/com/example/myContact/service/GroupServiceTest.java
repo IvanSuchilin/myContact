@@ -1,13 +1,10 @@
 package com.example.myContact.service;
 
-import com.example.myContact.dto.contactDto.ContactDto;
-import com.example.myContact.dto.contactDto.ContactDtoUpd;
 import com.example.myContact.dto.groupDto.GroupCreatingDto;
 import com.example.myContact.dto.groupDto.GroupDto;
 import com.example.myContact.dto.groupDto.GroupDtoUpd;
 import com.example.myContact.exceptions.NotFoundException;
 import com.example.myContact.exceptions.RequestValidationException;
-import com.example.myContact.model.Contact;
 import com.example.myContact.model.Group;
 import lombok.RequiredArgsConstructor;
 import org.junit.jupiter.api.Assertions;
@@ -20,7 +17,7 @@ import org.springframework.test.context.jdbc.Sql;
 
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.springframework.http.HttpStatus.BAD_REQUEST;
 import static org.springframework.http.HttpStatus.NOT_FOUND;
 
