@@ -14,7 +14,6 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.stream.Collectors;
 
 @Slf4j
@@ -23,7 +22,6 @@ import java.util.stream.Collectors;
 public class GroupService {
     private final GroupRepository groupRepository;
     private final DtoValidator validator;
-    DateTimeFormatter returnedTimeFormat = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
 
     public Object createGroup(GroupCreatingDto newGroup) {
         validator.validateGroupCreatingDto(newGroup);

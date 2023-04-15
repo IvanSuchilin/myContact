@@ -4,10 +4,8 @@ import com.example.myContact.dto.contactDto.ContactCreatingDto;
 import com.example.myContact.dto.contactDto.ContactDtoUpd;
 import com.example.myContact.dto.groupDto.GroupCreatingDto;
 import com.example.myContact.dto.groupDto.GroupDtoUpd;
-import com.example.myContact.exceptions.NotFoundException;
 import com.example.myContact.exceptions.RequestValidationException;
 import com.example.myContact.repository.ContactRepository;
-import com.example.myContact.repository.GroupRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
@@ -19,7 +17,6 @@ import java.time.LocalDateTime;
 @Component
 @RequiredArgsConstructor
 public class DtoValidator {
-    private final GroupRepository groupRepository;
     private final ContactRepository contactRepository;
     LocalDateTime time = LocalDateTime.now();
 

@@ -1,7 +1,6 @@
 package com.example.myContact.controller;
 
 import com.example.myContact.dto.contactDto.ContactDtoUpd;
-import com.example.myContact.dto.groupDto.GroupDtoUpd;
 import com.example.myContact.service.ContactService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -33,7 +32,7 @@ public class ContactController {
         return new ResponseEntity<>(contactService.getContactById(contactId), HttpStatus.OK);
     }
 
-   @GetMapping("/contacts")
+    @GetMapping("/contacts")
     public ResponseEntity<Object> getEvents(@PositiveOrZero @RequestParam(defaultValue = "0") Integer from,
                                             @Positive @RequestParam(defaultValue = "10") Integer size) {
         log.info("Получение всех контактов");

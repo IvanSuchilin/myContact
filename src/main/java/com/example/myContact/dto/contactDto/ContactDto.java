@@ -1,7 +1,6 @@
 package com.example.myContact.dto.contactDto;
 
 import com.example.myContact.model.Contact;
-import com.example.myContact.model.Group;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
