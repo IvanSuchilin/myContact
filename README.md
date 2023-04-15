@@ -9,6 +9,7 @@ ___
  ## Стек
 <img src="https://img.shields.io/badge/Java-C71A36?style=for-the-badge&logo=Java&logoColor=white"/> <img src="https://img.shields.io/badge/SPring boot-%236DB33F?style=for-the-badge&logo=Spring Boot&logoColor=white"/> <img src="https://img.shields.io/badge/PostgreSQL-blue?style=for-the-badge&logo=PostgreSQL&logoColor=white"/> <img src="https://img.shields.io/badge/Hibernate-006400?style=for-the-badge&logo=Hibernate&logoColor=white"/> <img src="https://img.shields.io/badge/Maven-C71A36?style=for-the-badge&logo=Apache%20Maven&logoColor=white"/>
 <img src="https://img.shields.io/badge/DOcker-blue?style=for-the-badge&logo=DOcker&logoColor=white"/>
+<img src="https://img.shields.io/badge/H2-black?style=for-the-badge&logo=H2&logoColor=white"/>
 
 ### Функционал
 
@@ -17,7 +18,8 @@ ___
 
 В ветке *main* финальный merge из ветки develop согласно ТЗ.
 
-В ветке *tests* добавлены тесты
+В ветке *tests* добавлены тесты (бд H2 настроена для активного профиля test)
+
 ---
 ### Возможности по улучшению
 
