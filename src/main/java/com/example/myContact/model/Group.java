@@ -37,7 +37,7 @@ public class Group {
     @Column(name = "create_date", nullable = false)
     private LocalDateTime createdOn;
 
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, orphanRemoval = true, mappedBy = "group")
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, orphanRemoval = true, mappedBy = "group")
     private List<Contact> contacts = new ArrayList<>();
 
     public enum Category {

@@ -137,21 +137,22 @@ class ContactServiceTest {
     }
 
     @Test
-    void updateWrongId(){
+    void updateWrongId() {
         NotFoundException thrown = Assertions.assertThrows(NotFoundException.class,
                 () -> contactService.update(10L, new ContactDtoUpd()));
         Assertions.assertEquals("Запрашиваемый объект не найден или не доступен", thrown.getReason());
         Assertions.assertEquals(NOT_FOUND, thrown.getStatus());
     }
+
     @Test
-    void updateWrongEmail(){
+    void updateWrongEmail() {
         groupService.createGroup(group1);
         contactService.createContact(1L, contact1);
         ContactDtoUpd contactDtoUpd = new ContactDtoUpd();
         contactDtoUpd.setEmail("mail");
 
         RequestValidationException thrown = Assertions.assertThrows(RequestValidationException.class,
-                () -> contactService.update(1L,contactDtoUpd));
+                () -> contactService.update(1L, contactDtoUpd));
         Assertions.assertEquals("Неверный email", thrown.getReason());
         Assertions.assertEquals(BAD_REQUEST, thrown.getStatus());
     }
